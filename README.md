@@ -1,39 +1,50 @@
-# Telemedicine Payment System
+# Workout Repetition Counter
 
-This project is a decentralized telemedicine payment system built on Ethereum using Solidity and a simple HTML/JavaScript frontend. It facilitates secure and automated payments for doctor-patient consultations, with funds held in escrow and released upon consultation completion.
+This project is a decentralized workout repetition counter built on Ethereum using Solidity and a React frontend. It facilitates tracking of exercise performance by counting successful and failed repetitions.
 
 ## Features
 
-- **Secure Payments**: Payments are securely held in escrow on the Ethereum blockchain until the consultation is confirmed.
-- **Automated Fee Release**: Automatically releases the consultation fee to the doctor upon confirmation.
-- **Emergency Revert**: Allows the patient to revert the consultation and get a refund if the consultation is not completed.
 - **MetaMask Integration**: Uses MetaMask for authentication and transaction signing.
+- **Track Repetitions**: Allows users to increment or decrement the count of workout repetitions.
+- **Real-time Updates**: Updates the counter value in real-time based on user interactions.
 
 ## Smart Contract Details
 
 ### Functions
 
-- **pay**: Allows the patient to pay the consultation fee.
-- **confirmConsultation**: Allows the doctor to confirm the consultation and release the payment.
-- **emergencyRevert**: Allows the patient to revert the consultation and get a refund.
-- **getDetails**: Returns the details of the consultation (patient, doctor, fee, and consultation status).
-- **checkInvariant**: Ensures the contract's balance is correct based on the consultation status.
+- **increment**: Adds a successful repetition to the counter.
+- **decrement**: Removes a repetition from the counter for incorrect form or mistakes.
+- **getCounter**: Returns the current counter value.
 
 ### Error Handling
 
 - **require**: Used to validate conditions and inputs.
 - **revert**: Used to handle errors and revert the transaction.
-- **assert**: Used to check for conditions that should never be false.
 
 ## Frontend Details
 
-The frontend is a simple HTML and JavaScript application that interacts with the smart contract using Web3.js. It includes:
+The frontend is a React application that interacts with the smart contract using ethers.js. It includes:
 
-- **Pay Consultation Fee**: Allows the patient to pay the consultation fee.
-- **Confirm Consultation**: Allows the doctor to confirm the consultation.
-- **Emergency Revert**: Allows the patient to revert the consultation.
-- **Consultation Details**: Displays the details of the consultation.
+- **Connect Wallet**: Allows users to connect their MetaMask wallet.
+- **Successful Rep**: Button to increment the counter for successful repetitions.
+- **Failed Rep**: Button to decrement the counter for failed repetitions.
+- **Counter Display**: Shows the current value of the counter.
+
+### Styling
+
+The application is styled using CSS-in-JS with the following design elements:
+
+- **Container**: Light teal background with centered content.
+- **Header**: Dark teal background with white text and rounded corners.
+- **Description and User Interface Sections**: White background, padding, rounded corners, and subtle box-shadow for a card-like effect.
+- **Buttons**: Dark teal background with white text and hover effect.
 
 ### License
 
 This project is licensed under the MIT License.
+
+### Authors
+
+- **Facebook**: Reginald Carl Sanchez
+- **GitHub**: @Regie04
+- **Mail**: sanchezreginald4@gmail.com
